@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Operators and Expressions ex8</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+
+	<h1>Operators and Expressions</h1>
+	<h3>ex.8	Write an expression that calculates trapezoid's area by given sides a and b and height h.</h3>
+	
+	<div id="js-console">
+		<label for="sideA">Enter size A: </label>
+		<input type="text" id="sideA"/>
+		<br />
+		<label for="sideB">Enter size B: </label>
+		<input type="text" id="sideB"/>
+		<br />
+		<label for="height">Enter height H: </label>
+		<input type="text" id="height"/>
+		<br />
+		<a href="#" onclick="onCalculatetrapezoidArea()">Calculate trapezoid area</a>
+		<br />	
+	</div>	
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onCalculatetrapezoidArea(){
+			var sideA = jsConsole.readInteger("#sideA");
+			var sideB = jsConsole.readInteger("#sideB");
+			var height = jsConsole.readInteger("#height");
+
+        	//S = (a + b) / 2 * h.
+       		var trapezoidArea = (sideA + sideB) / 2 * height;
+        	jsConsole.writeLine("Trapezoid`s area is: " + trapezoidArea);   
+		}
+	</script>
+</body>
+</html>

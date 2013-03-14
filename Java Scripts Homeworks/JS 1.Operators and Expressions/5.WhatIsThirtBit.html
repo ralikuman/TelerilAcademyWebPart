@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Operators and Expressions ex5</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+
+	<h1>Operators and Expressions</h1>
+	<h3>ex.5	Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.</h3>
+	
+	<div id="js-console">
+		<label for="number">Enter number: </label>
+		<input type="text" id="number"/>
+		<a href="#" onclick="onFindingThirdBit()">Check Number</a>
+		<br />	
+	</div>	
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindingThirdBit(){
+			
+			var number = jsConsole.readInteger("#number");
+			var checkNumber = 8;
+			var sum = number & checkNumber;
+			var bit = sum >> 3;
+
+			if (bit != 0)
+	        {
+	            jsConsole.writeLine("Third bit is 1");
+	        }
+	        else 
+	        {
+	            jsConsole.writeLine("Third bit is 0");
+	        }
+		}
+	</script>
+</body>
+</html>

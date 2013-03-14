@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Operators and Expressions ex7</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+	<h1>Operators and Expressions</h1>
+	<h3>ex.7	Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime.</h3>
+
+	<div id="js-console">
+		<label for="number">Enter number: </label>
+		<input type="text" id="number"/>
+		<a href="#" onclick="onCheckIsPrimeNumber()">Check Number</a>
+		<br />	
+	</div>	
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+
+		function onCheckIsPrimeNumber(){
+			var number = jsConsole.readInteger("#number");
+        	var isPrimeNumber = true;
+
+	        if ((number > 0) && (number <= 100))
+	        {
+	            for (var i = 2; i < Math.sqrt(number); i++)
+	            {
+	                if (number % i == 0)
+	                {
+	                    isPrimeNumber = false;
+	                }
+	            }
+
+	            if (isPrimeNumber == true)
+	            {
+	                jsConsole.writeLine("the number " + number + " is prime");
+	            }
+	            else
+	            {
+	                jsConsole.writeLine("the number " + number + " is NOT prime");
+	            }          
+	        }
+	        else 
+	        {
+	            jsConsole.writeLine("the enter number is biggen than 100");
+	        }
+		}
+	</script>
+</body>
+</html>

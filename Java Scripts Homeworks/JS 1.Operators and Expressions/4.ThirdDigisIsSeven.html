@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Operators and Expressions ex4</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+
+	<h1>Operators and Expressions</h1>
+	<h3>ex4.	Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732  -> true.</h3>
+	
+	<div id="js-console">
+		<label for="number">Enter number: </label>
+		<input type="text" id="number"/>
+		<a href="#" onclick="onCheckThirdDigit()">Check Number</a>
+		<br />	
+	</div>	
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onCheckThirdDigit(){
+			var number = jsConsole.readInteger("#number");
+			var divider;
+			var reminder;
+
+	        divide = number / 100;
+	        remainder = divide % 10;
+	        
+	        reminder = window.parseInt(remainder);
+			//reminder = Math.floor(reminder);
+	        if (reminder == 7)
+	        {
+	           jsConsole.writeLine ("Number " + number + " -> true");
+	        }
+	        else
+	        {
+	             jsConsole.writeLine ("Number " + number + " -> false");
+	        }
+		}
+	</script>
+</body>
+</html>

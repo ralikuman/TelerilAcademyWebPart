@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Operators and Expressions ex6</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+
+	<h1>Operators and Expressions</h1>
+	<h3>ex.6 Write an expression that checks if given print (x,  y) is within a circle K(O, 5).</h3>
+	
+	<div id="js-console">
+		<label for="coordX">Enter coordinate X : </label>
+		<input type="text" id="coordX"/>
+
+		<label for="coordY">Enter coordinate Y : </label>
+		<input type="text" id="coordY"/>
+		<br />	
+		<a href="#" onclick="onCheckPointInCircle()">Check is it in circle!</a>
+		<br />	
+	</div>	
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onCheckPointInCircle(){
+
+			var coordX = jsConsole.readInteger("#coordX");
+			var coordY = jsConsole.readInteger("#coordY");
+
+			//Radius = sqrt(x * x + y * y);
+			var squaredX = coordX * coordX;
+       		var squaredY = coordY * coordY;
+       		
+       		if (( Math.sqrt (squaredX + squaredY)) <= 5)
+        	{
+            	jsConsole.writeLine(" The point with coordinates (" + coordX + ", " + coordX + ") is in circle K(O, 5)");
+        	}
+        	else
+        	{
+            	jsConsole.writeLine(" The point with coordinates (" + coordX + ", " + coordX + ") is NOT in circle K(O, 5)");
+        	}
+		}
+	</script>
+</body>
+</html>
+
+

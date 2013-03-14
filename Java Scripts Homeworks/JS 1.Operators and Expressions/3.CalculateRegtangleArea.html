@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Operators and Expressions ex3</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+
+	<h1>Operators and Expressions</h1>
+	<h3>ex.3  Write an expression that calculates rectangle’s area by given width and height.</h3>
+	
+	<div id="js-console">
+		<label for="width">Enter width: </label>
+		<input type="text" id="width"/>
+		<label for="width">Enter height: </label>
+		<input type="text" id="height"/>
+		<br />	
+		<a href="#" onclick="onCalculatesRectangleArea()">Calculates rectangle’s area</a>
+		<br />	
+	</div>	
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onCalculatesRectangleArea(){
+			var width = jsConsole.readInteger("#width");
+			var height = jsConsole.readInteger("#height");
+			var regtangleArea = width * height;
+			jsConsole.writeLine("The rectangle’s area is " + regtangleArea);
+		}
+	</script>
+</body>
+</html>
