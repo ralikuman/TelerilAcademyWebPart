@@ -1,0 +1,42 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Loops ex2</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="js-style.css" rel="stylesheet"/>	
+	<script>	
+		function onPrintValue(){
+			//get value from text input
+			var number = document.getElementById('firstNumber').value;   
+					
+			for (var i = 1; i <= 100; i++){
+	            if ((i % 3 != 0) && (i % 7 != 0)){
+	                onPrint(i);
+	            }
+			}    
+		}
+
+		//function to create paragraph and show numbers
+		function onPrint(i)
+		{
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("result");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+		}
+
+	</script>
+</head>
+<body>
+	<h1>Homework Loops</h1>
+	<h3>ex.2	Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time</h3>
+	<div id="js-console">
+		<label for="firstNumber">Enter number: </label>
+		<input type="text" id="firstNumber"/>
+		<a href="#" onclick="onPrintValue()">Print numbers</a>
+		<br/>	
+	</div>	
+		
+	<div id="result"> </div>
+</body>
+</html>

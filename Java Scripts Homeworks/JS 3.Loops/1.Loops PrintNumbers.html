@@ -1,0 +1,42 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+	<title>Loops ex1</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="js-style.css" rel="stylesheet"/>
+	
+		<script>	
+		function onPrintValue(){
+			//get value from text input
+			var number = document.getElementById('firstNumber').value;        
+			console.log(number);					
+			for (var i = 1; i <= number; i++){
+				console.log(i);
+				onPrint(i); //show the number
+			}    
+		}
+
+		//function to create paragraph and show numbers
+		function onPrint(i)
+		{
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("result");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+			//refNode.parentNode.insertBefore(newNode, refNode.nextSibling); 
+		}
+	</script>
+</head>
+<body>
+	<h1>Homework Loops</h1>
+	<h3>ex.1 Write a script that prints all the numbers from 1 to N</h3>
+	<div id="js-console">
+		<label for="firstNumber">Enter number: </label>
+		<input type="text" id="firstNumber"/>
+		<a href="#" onclick="onPrintValue()">Print numbers</a>
+		<br/>	
+	</div>	
+		
+	<div id="result"> </div>
+</body>
+</html>

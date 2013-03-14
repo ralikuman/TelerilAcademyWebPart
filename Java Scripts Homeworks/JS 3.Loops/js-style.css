@@ -1,0 +1,18 @@
+body{
+	margin: 0;
+  	padding: 5px 5px;
+	font-family: Consolas;
+    font-size: 12px;
+    background-color: #80FF80;
+}
+
+body .js-console a{
+   	text-decoration: underline;
+  	color:purple;
+  	font-weight: bold;
+  	font-size: 14px;
+}
+
+#result{
+	border: 2ps solid blue;
+}
