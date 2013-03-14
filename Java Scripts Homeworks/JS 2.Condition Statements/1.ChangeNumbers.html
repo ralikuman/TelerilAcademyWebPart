@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Condition Statements ex1</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+	<h1>Homework JS - Condition Statements</h1>
+	<h3>ex.1	Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.</h3>
+	
+	<div id="js-console">
+		<label for="firstNumber">Enter number: </label>
+		<input type="text" id="firstNumber"/>
+		<label for="secondNumber">Enter number: </label>
+		<input type="text" id="secondNumber"/>
+		<a href="#" onclick="onChangeValue()">Check and change!</a>
+		<br />	
+	</div>	
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onChangeValue(){
+
+			var firstNumber = jsConsole.readInteger("#firstNumber");
+			var secondNumber = jsConsole.readInteger("#secondNumber");
+			var smaller;
+	        
+	        if (firstNumber > secondNumber)
+	        {
+	            jsConsole.writeLine("first number is bigger than second");
+	            jsConsole.writeLine("");
+	        }
+	        else if (firstNumber < secondNumber)
+	        {
+	            smaller = firstNumber;
+	            firstNumber = secondNumber;
+	            secondNumber = smaller;
+	            jsConsole.writeLine("first number is smaller than second, so their values are change");
+	            jsConsole.writeLine("firstNumber=" + firstNumber + ", secondNumber=" + secondNumber);
+	            jsConsole.writeLine("");
+	        }
+	        else if (firstNumber == secondNumber)
+	        {
+	            jsConsole.writeLine("both number are equal");
+	            jsConsole.writeLine("");
+	        }
+		}
+	</script>
+</body>
+</html>

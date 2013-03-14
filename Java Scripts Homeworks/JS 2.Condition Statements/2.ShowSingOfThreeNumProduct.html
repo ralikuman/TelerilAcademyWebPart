@@ -1,0 +1,65 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Condition Statements ex2</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+	<h1>Homework JS - Condition Statements</h1>
+	<h3>ex.2	Write a script that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.</h3>
+	
+	<div id="js-console">
+		<label for="firstNumber">Enter first number: </label>
+		<input type="text" id="firstNumber"/>
+		<br />	
+		<label for="secondNumber">Enter second number: </label>
+		<input type="text" id="secondNumber"/>
+		<br />	
+		<label for="thirdNumber">Enter third number: </label>
+		<input type="text" id="thirdNumber"/>
+		<br />	
+		<a href="#" onclick="onShowSingProduct()">Show the sing of the product!</a>
+		<br />	
+	</div>	
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onShowSingProduct(){
+
+			//declaration of variables
+			var firstNumber = jsConsole.readInteger("#firstNumber");
+			var secondNumber = jsConsole.readInteger("#secondNumber");
+			var thirdNumber = jsConsole.readInteger("#thirdNumber");			
+			var checkSing = 0
+	        
+		    if (firstNumber < 0)
+	        {
+	            checkSing++;
+	        }
+	        if (secondNumber < 0)
+	        {
+	            checkSing++;
+	        }
+	        if (thirdNumber < 0)
+	        {
+	            checkSing++;
+	        }
+
+	        if (firstNumber == 0 || secondNumber == 0 || thirdNumber == 0)
+	        {
+	            jsConsole.writeLine("Product of three numbers is zero");
+	        }
+	        else if (checkSing % 2 == 0)
+	        {
+	            jsConsole.writeLine("Product of three numbers is pozitive ");
+	        }
+	        else
+	        {
+	            jsConsole.writeLine("Product of three numbers is negative ");
+	        } 
+		}
+	</script>
+</body>
+</html>
+

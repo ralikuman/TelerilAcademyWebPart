@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Condition Statements ex7</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+
+	<script>		
+		var array = new Array();
+		var arraySize = 5;
+		var count= 0;
+
+		for(var i=0;i<arraySize;i++){  
+  			//add numbers in array
+			function insert(val){ 
+			     array[array.length]=val;
+			     count++;
+              
+              	//when count == arraySize  - print result
+		     	 if (count==arraySize){     			
+	               show();
+	               //use Math.max to fint the biggest number
+	               var maxElement = Math.max(array[0],array[1],array[2],array[3],array[4]);
+	               document.writeln("biggest number = " + maxElement);	
+	             }
+    		}
+		}
+		
+		//print enter number in the array
+		function show(){
+			for(var i=0;i<array.length;i++){
+				document.writeln(array[i]);
+			}
+			document.writeln("<br>");
+		}
+	</script>
+
+</head>
+<body>
+	<h1>Homework Condition Statements</h1>
+	<h3>ex.7	Write a script that finds the greatest of given 5 variables.</h3>
+	<div id="js-console">
+	<form name="form1">
+	  <input type="text" name="name"/>
+	  <input type="button" Value="Add Into Array" onclick="insert(this.form.name.value)"/>
+  	</form>
+	</div>
+	
+  <div></div> 
+</body>
+</html>
+
+
+
+		

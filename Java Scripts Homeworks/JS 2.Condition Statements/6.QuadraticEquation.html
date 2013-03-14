@@ -1,0 +1,61 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Condition Statements ex6</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+	<h1>Homework JS - Condition Statements</h1>
+	<h3>ex.6	Write a script that enters the coefficients a, b and c of a quadratic equation a*x2 + b*x + c = 0 and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots..</h3>
+	
+	<div id="js-console">
+		<label for="coefA">Enter coefficient A: </label>
+		<input type="text" id="coefA"/>
+		<br />
+		<label for="coefB">Enter coefficient B: </label>
+		<input type="text" id="coefB"/>
+		<br />
+		<label for="coefC">Enter coefficient C: </label>
+		<input type="text" id="coefC"/>
+		<br />
+		<a href="#" onclick="onChangeValue()">Check and change!</a>
+		<br />	
+	</div>	
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onChangeValue(){
+
+			var coefA = jsConsole.readInteger("#coefA");
+			var coefB = jsConsole.readInteger("#coefB");
+			var coefC = jsConsole.readInteger("#coefC");
+            var discriminant;
+            var root1;
+            var root2;
+
+            discriminant = (coefB * coefB) - (4 * coefA * coefC);
+            jsConsole.writeLine("Disriminant = " + discriminant);
+
+            if (discriminant > 0)
+            {
+                root1 = (-coefB + Math.sqrt(discriminant)) / (2 * coefA);
+                root2 = (-coefB - Math.sqrt(discriminant)) / (2 * coefA);
+                //use toFixed() Method to show 6 digits after the point
+                jsConsole.writeLine("Quadratic equation has 2 roots: root1 = " + (root1).toFixed(6) + " and root2 = " + (root2).toFixed(6));
+            }
+            else if (discriminant == 0)
+            {
+                root1 = (-coefB / (2 * a));
+                jsConsole.writeLine("Quadratic equation has one root " + (root1).toFixed(6));
+            }
+            else if (discriminant < 0)
+            {
+                jsConsole.writeLine("Quadratic equation has no roots");
+            }
+		}
+	</script>
+</body>
+</html>
+
+

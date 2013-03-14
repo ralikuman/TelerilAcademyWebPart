@@ -1,0 +1,98 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Condition Statements ex4</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+	<h1>Homework JS - Condition Statements</h1>
+	<h3>ex.4	Sort 3 real values in descending order using nested if statements.</h3>
+	<div id="js-console">
+		<label for="firstNumber">Enter first number: </label>
+		<input type="text" id="firstNumber"/>
+		<br />	
+		<label for="secondNumber">Enter second number: </label>
+		<input type="text" id="secondNumber"/>
+		<br />	
+		<label for="thirdNumber">Enter third number: </label>
+		<input type="text" id="thirdNumber"/>
+		<br />	
+		<a href="#" onclick="onSortThreeNumbers()">Sort descending!</a>
+		<br />	
+	</div>	
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+		
+		function onSortThreeNumbers(){
+			var firstNumber = jsConsole.readInteger("#firstNumber");
+			var secondNumber = jsConsole.readInteger("#secondNumber");
+			var thirdNumber = jsConsole.readInteger("#thirdNumber");
+			var biggestNumber;
+        	var midleNumber;
+        	var smallestNumber;
+
+	        if (firstNumber > secondNumber)
+	        {
+	            biggestNumber = firstNumber;
+	            if (thirdNumber > firstNumber)
+	            {
+	                smallestNumber = secondNumber;
+	                midleNumber = firstNumber;
+	                biggestNumber = thirdNumber;
+	                jsConsole.writeLine("Descending order is: " + biggestNumber +", " + midleNumber + ", " + smallestNumber);
+	            }
+	            else
+	            {
+	                biggestNumber = firstNumber;
+	                if (thirdNumber > secondNumber)
+	                {
+	                    midleNumber = thirdNumber;
+	                    smallestNumber = secondNumber;
+	                }
+	                else
+	                {
+	                    midleNumber = secondNumber;
+	                    smallestNumber = thirdNumber;
+	                }
+	                jsConsole.writeLine("Descending order is: " + biggestNumber +", " + midleNumber + ", " + smallestNumber);
+	            }
+	        }
+	        else if (firstNumber < secondNumber)
+	        {
+	            biggestNumber = secondNumber;
+
+	            if (thirdNumber > secondNumber)
+	            {
+	                biggestNumber = thirdNumber;
+	                midleNumber = secondNumber;
+	                smallestNumber = firstNumber;
+	                jsConsole.writeLine("Descending order is: " + biggestNumber +", " + midleNumber + ", " + smallestNumber);
+	            } 
+	            else
+	            {
+	                biggestNumber = secondNumber;
+	                if (thirdNumber > firstNumber)
+	                {
+	                    midleNumber = thirdNumber;
+	                    smallestNumber = firstNumber;
+	                }
+	                else
+	                {
+	                    midleNumber = firstNumber;
+	                    smallestNumber = thirdNumber;
+	                }
+	                jsConsole.writeLine("Descending order is: " + biggestNumber +", " + midleNumber + ", " + smallestNumber);
+	            }
+	        }
+	        else if (firstNumber == secondNumber && secondNumber == thirdNumber)
+	        {
+	            jsConsole.writeLine("The numbers are equal");
+	        } 
+		}
+	</script>
+</body>
+</html>
+
+//4.	

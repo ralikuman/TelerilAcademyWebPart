@@ -1,0 +1,70 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Condition Statements ex3</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet"/>
+</head>
+<body>
+	<h1>Homework JS - Condition Statements</h1>
+	<h3>ex.3 Write a script that finds the biggest of three integers using nested if statements.</h3>
+	
+	<div id="js-console">
+		<label for="firstNumber">Enter first number: </label>
+		<input type="text" id="firstNumber"/>
+		<br />
+		<label for="secondNumber">Enter second number: </label>
+		<input type="text" id="secondNumber"/>
+		<br />
+		<label for="thirdNumber">Enter third number: </label>
+		<input type="text" id="thirdNumber"/>
+		<br />	
+		<a href="#" onclick="onFindBiggestNumber()">Find biggest number!</a>
+		<br />	
+	</div>	
+
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onFindBiggestNumber(){
+
+			var firstNumber = jsConsole.readInteger("#firstNumber");
+			var secondNumber = jsConsole.readInteger("#secondNumber");
+			var thirdNumber = jsConsole.readInteger("#thirdNumber");	
+		 	var biggestNumber;
+
+        	if (firstNumber > secondNumber)
+	        {
+	            biggestNumber = firstNumber;
+	            if (thirdNumber > firstNumber)
+	            {
+	                biggestNumber = thirdNumber;
+	                jsConsole.writeLine( firstNumber + ", " + secondNumber  + ", " + thirdNumber + " => biggest Number is "+biggestNumber);
+	            }
+	            else
+	            {
+	                biggestNumber = firstNumber;
+	                jsConsole.writeLine( firstNumber + ", " + secondNumber  + ", " + thirdNumber + " => biggest Number is " + biggestNumber);
+	            }
+	        }
+	        else if (firstNumber < secondNumber)
+	        {
+	            biggestNumber = secondNumber;
+	            if (thirdNumber > secondNumber)
+	            {
+	                biggestNumber = thirdNumber;
+	                jsConsole.writeLine( firstNumber + ", " + secondNumber  + ", " + thirdNumber + " => biggest Number is " + biggestNumber);
+	            }
+	            else
+	            {
+	                biggestNumber = secondNumber;
+	               jsConsole.writeLine( firstNumber + ", " + secondNumber  + ", " + thirdNumber + " => biggest Number is " + biggestNumber);
+	            }
+	        }
+	        else if (firstNumber == secondNumber && secondNumber == thirdNumber)
+	        {
+	            jsConsole.writeLine("The numbers are equal");
+	        }          
+		}
+	</script>
+</body>
+</html>
