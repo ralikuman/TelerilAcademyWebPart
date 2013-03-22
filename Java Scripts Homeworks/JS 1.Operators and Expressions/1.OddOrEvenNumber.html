@@ -1,0 +1,37 @@
+
+<html>
+<head>
+	<title>Operators and Expressions - ex1</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="styles/js-console.css" rel="stylesheet" />
+
+ </head>
+<body>
+
+	<h1>Operators and Expressions</h1>
+	<h3>ex1. Write an expression that checks if given integer is odd or even</h3>
+	<div id="js-console">
+
+	<label for="number">Enter number: </label>
+	<input type="text" id="number"/>
+	<a href="#" onclick="onCheckOddOrEcvenNumber()">Odd or Even?</a>
+	<br />	
+
+	</div>				 
+	<script src="scripts/js-console.js"></script>
+	<script>
+		function onCheckOddOrEcvenNumber(){
+			var number = jsConsole.readInteger("#number");
+			if (number %2 === 0){
+				
+				jsConsole.writeLine("The number " + number + " is even");
+			}
+			else {
+				jsConsole.writeLine("The number " + number + " is odd");
+			}
+		}
+	</script>
+</body>
+</html>
+
+

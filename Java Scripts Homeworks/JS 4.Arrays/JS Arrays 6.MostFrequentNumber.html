@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Arrays ex6</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script>
+		function onShowResult(){
+			var sequence = new Array(4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3);		
+			var count = 1;
+			var index = 0;
+			var bestCount = 0;
+			var bestValue = 0
+		
+			sequence.sort()
+
+			for (var i = 0; i < sequence.length - 1; i++)
+			{
+				if (sequence[i] == sequence[i + 1])
+				{
+					count++;
+					index = i;
+				}
+				else
+				{
+					count = 1;
+				}
+
+				if (count > bestCount)
+				{
+					bestCount = count;
+					bestValue = sequence[index];
+				}
+			}
+        onPrint("The most frequent number in the sequence is:  " + bestValue + " ===> " +  bestCount + "times");
+			
+		}
+
+		//function to create paragraph and show numbers
+		function onPrint(i){
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("show");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+		}
+		
+	</script>
+</head>
+<body>
+	<h1>JS Homework Arrays</h1>
+	<h3>ex.6 Write a program that finds the most frequent number in an array. Example:{4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3}  4 (5 times)</h3>
+	<div id="js-console">
+		<p></p>
+		<input type="button" id="result" onclick="onShowResult()" value="show max sequence"/>
+	</div>
+    <div id="show"> </div>
+  
+</body>
+</html>

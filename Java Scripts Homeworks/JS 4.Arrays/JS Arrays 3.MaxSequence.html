@@ -1,0 +1,62 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Arrays ex3</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script>
+		function onShowResult(){
+			var sequence = new Array(1,2,3,4,5,6,7,8,9,10);
+			//var sequence = new Array(2, 1, 1, 2, 3, 3, 2, 2, 2, 1);
+			var start = 0;
+			var len = 1;
+			var bestStart = start;
+			var bestLen = 0;	
+			for (var i = 0; i < sequence.length - 1; i++){
+				if (sequence[i] != sequence[i + 1]){
+					start = 0;
+					len = 1;
+				}
+				else if (sequence[i] == sequence[i + 1]){
+					start = sequence[i];
+					len++;
+					if (len >= bestLen){
+						bestLen = len;
+						bestStart = start;
+					}
+				}
+			}
+		onPrint("Sequence:" + sequence);		
+		if (bestLen > 1)
+        {
+            onPrint("maximal sequence of " + bestStart + " equal elements  is "+ bestLen);
+        }
+        else{
+            onPrint("no maximal sequence of equal elements  ");
+        }				
+		}
+
+		//function to create paragraph and show numbers
+		function onPrint(i){
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("show");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+		}
+		
+	</script>
+</head>
+<body>
+	<h1>JS Homework Arrays</h1>
+	<h3>ex.3 Write a script that finds the maximal sequence of equal elements in an array.</h3>
+	<div id="js-console">
+		<!--<label for="firstWord">Enter first word: </label>
+		<input type="text" id="firstWord"/>
+		<label for="secondWord">Enter second word: </label>
+		<input type="text" id="secondWord"/> -->
+		<input type="button" id="result" onclick="onShowResult()" value="show max sequence"/>
+	</div>
+    
+    <div id="show"> </div>
+  
+</body>
+</html>

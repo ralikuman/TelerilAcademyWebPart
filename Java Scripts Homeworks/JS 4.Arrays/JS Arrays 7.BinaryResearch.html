@@ -1,0 +1,94 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Arrays ex7</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script>
+		function onShowResult(){
+			var originalArr = new Array(3, 6, 8, 5, 9, 66, 25, 53, 56, 78, 234, 45, 90);
+			onPrint("Sequence original elements: " + originalArr);
+			
+			var number = document.getElementById('number').value;
+			
+			var sequence = SelectionSort(originalArr);
+			onPrint("Sort elements: " + sequence);
+
+			var index = -1;  //търсеният индекс в масива
+			var min = 0;    // минималния индекс в масива
+			var max = sequence.length; //максималния индекс в масива
+
+			if (max < min){
+				onPrint("the array is empty");
+			}
+			else
+			{
+				for (var i = 0; i < sequence.length; i++){
+					//намиране на средата на индексите	
+					var middleOfArray = parseInt(min + ((max - min) / 2));
+					console.log(middleOfArray);
+
+					if (sequence[middleOfArray] > number)
+					{
+						max = middleOfArray--;
+					}
+					else if (sequence[middleOfArray] < number)
+					{
+						min = middleOfArray++;
+					}
+					else
+					{
+						index = middleOfArray;
+					}
+				}
+
+				if (index > -1)
+				{
+					onPrint("Еlement " + number + " there is index " + index);
+				}
+				else
+				{
+					onPrint("The element is not part of the array");
+				}
+			}
+		}
+		
+		function SelectionSort(originalArr){		
+			var array = originalArr.slice(0); 
+			for (var i = 0; i < array.length - 1; i++){
+				var min = i;
+				for (var j = i + 1; j < array.length; j++){
+					if (array[j] < array[min]){
+						min = j;
+					}
+				}
+				if (min != i){
+					var temp = array[i];
+					array[i] = array[min];
+					array[min] = temp;
+				}
+			}
+			return array;
+		}
+		
+		//function to create paragraph and show numbers
+		function onPrint(i){
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("show");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+		}
+		
+	</script>
+</head>
+<body>
+	<h1>JS Homework Arrays</h1>
+	<h3>ex.7 Write a program that finds the index of given element in a sorted array of integers by using the binary search algorithm (find it in Wikipedia)</h3>
+	<div id="js-console">
+		<label for="number">Enter number: </label>
+		<input type="text" id="number"/>
+		<input type="button" id="result" onclick="onShowResult()" value="binary research"/>
+	</div>
+    <div id="show"> </div>
+  
+</body>
+</html>

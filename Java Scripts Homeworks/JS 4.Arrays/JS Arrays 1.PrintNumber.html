@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Arrays ex1</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script>
+		function onShowResult(){
+			var array = new Array(20);
+			for (var i = 0; i < array.length; i++){
+				array[i] = i * 5;
+			}
+			for (var i = 0; i < array.length; i++) {
+			  document.writeln(array[i] + "   ");
+			}	
+		}
+	</script>
+</head>
+<body>
+	<h1>JS Homework Arrays</h1>
+	<h3>ex.1 Write a script that allocates array of 20 integers and initializes each element by its index multiplied by 5. Print the obtained array on the console.</h3>
+	<div id="js-console">
+		<input type="button" id="result" onclick="onShowResult()" value="show result"/>
+	</div>
+</body>
+</html>
