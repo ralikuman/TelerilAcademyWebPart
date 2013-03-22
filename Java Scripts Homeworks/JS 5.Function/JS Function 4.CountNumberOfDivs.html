@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Functions ex3</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		body{
+			background: #FFFFCC;
+			font-family: Arial;
+		}
+	</style>
+	<script type="text/javascript">
+		function onCalcNumberODivs(){
+			var countDivs=document.getElementsByTagName("div").length;
+			onPrint("Number of divs is: " + countDivs);
+			console.log(countDivs);
+		}
+		function onPrint(i){
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("show");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+		}	
+	</script>
+</head>
+<body>
+	<h1>Homework Functions</h1>
+	<h3>ex.4 Write a function to count the number of divs on the web page</h3>
+	
+	<div id="js-console">
+		<div> </div>
+		<input type="button" id="result" onclick="onCalcNumberODivs()" value="Number of divs"/>
+		<br/>	
+	</div>	
+	<div id="show"></div>
+</body>
+</html>

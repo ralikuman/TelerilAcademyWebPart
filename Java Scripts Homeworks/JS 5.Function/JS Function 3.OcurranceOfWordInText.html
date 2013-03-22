@@ -1,0 +1,82 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Functions ex3</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		body{
+			background: #FFFFCC;
+			font-family: Arial;
+		}
+	</style>
+	<script>	
+		var text;
+        var word;
+        var searchWord;  
+		var isCaseSensitive = false;
+        
+      function onFindOccuranceInText(){
+			text = document.getElementById('text').innerHTML;         
+			word = document.getElementById('word').value.trim();	
+			onFindInSensitiveOccurance(text.toLowerCase(), word.toLowerCase());	 //make all text and word lower letters to ignore case sensitive
+			onFindSensitiveOccurance(text, word, true);
+		}
+		
+      	function onFindInSensitiveOccurance(text, word){					
+			var countWordOccur = -1;
+			var tempArray = text.split(word);
+            for (var temp in tempArray) {
+                  countWordOccur++;
+            }
+			onPrint("Word: "+ word + " is occurance " + countWordOccur + " times (case NOT sensitive)");
+		}	
+		
+      function onFindSensitiveOccurance(text, word, isCaseSensitive){
+		  var countWordOccur = 0;
+          if (isCaseSensitive = true){
+                
+              var index = text.indexOf(word);//indexOf is case-sensitive
+              while (index >= 0) {
+                    countWordOccur++;
+                    index = text.indexOf(word, index+1);
+                }
+				onPrint("Word: "+ word + " is occurance " + countWordOccur + " times (case sensitive)");
+          }
+		}
+		
+		function onPrint(i){
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("show");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+		}		
+	</script>
+</head>
+<body>
+	<h1>Homework Functions</h1>
+	<h3>ex.3	Write a function that finds all the occurrences of word in a text
+	<br/>* The search can case sensitive or case insensitive
+	<br/>* Use function overloading</h3>
+	<div id="js-console">
+		<div>
+			<h3>The text</h3>
+			<p id="text">
+			JavaScript (JS) is an interpreted computer programming language. 
+			It was originally implemented as part of web browsers so that client-side scripts could interact with the user, control the browser, communicate asynchronously, and alter the document content that was displayed.
+			JavaScript is a prototype-based scripting language that is dynamic, weakly typed, and has first-class functions. 
+			Its syntax was influenced by the language C. 
+			JavaScript copies many names and naming conventions from Java, but the two languages are otherwise unrelated and have very different semantics. 
+			The key design principles within JavaScript are taken from the Self and Scheme programming languages. 
+			It is a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles.	
+			JavaScript is javaScript
+			names are Names
+			</p>
+		</div>
+		<label for="word">Enter word: </label>
+		<input type="text" id="word"/>
+		<input type="button" id="case" onclick="onFindOccuranceInText()" value="Find occurance of word"/>
+		<br />	
+	</div>	
+	<div id="show"></div>
+</body>
+</html>

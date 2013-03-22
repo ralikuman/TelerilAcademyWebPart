@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Functions ex1</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		body{
+			background: #FFFFCC;
+			font-family: Arial;
+		}
+	</style>
+	
+	<script>
+		function onShowNameDigit(){		
+			var number = document.getElementById('number').value;		
+			var digit =  number%10;
+			
+			switch (digit){
+				case 0: onPrint("zero"); break;
+				case 1: onPrint("one"); break;
+				case 2: onPrint("two"); break;
+				case 3: onPrint("three"); break;
+				case 4: onPrint("four"); break;
+				case 5: onPrint("five"); break;
+				case 6: onPrint("six"); break;
+				case 7: onPrint("seven"); break;
+				case 8: onPrint("eight"); break;
+				case 9: onPrint("nine"); break;
+				default: onPrint("no name");
+					break;
+			}	      
+		}
+		
+		function onPrint(i){
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("show");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+		}
+		
+	</script>
+	
+</head>
+<body>
+
+	<h1>Homework Functions</h1>
+	<h3>ex.1 Write a function that returns the last digit of given integer as an English word. Examples: 512  "two", 1024  "four", 12309  "nine"</h3>
+	
+	<div id="js-console">
+		<label for="number">Enter number: </label>
+		<input type="text" id="number"/>
+		<input type="button" id="result" onclick="onShowNameDigit()" value="Show name of last digit"/>
+		<br />	
+	</div>	
+	
+	<div id="show"></div>
+</body>
+</html>

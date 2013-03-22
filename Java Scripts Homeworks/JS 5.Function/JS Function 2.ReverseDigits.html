@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Functions ex1</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		body{
+			background: #FFFFCC;
+			font-family: Arial;
+		}
+	</style>
+	
+	<script>
+		function onReverseDigit(){		
+			var number = document.getElementById('number').value;	
+			var reverseNumber = number.toString().split("").reverse().join("");
+			onPrint(reverseNumber);			
+		}
+		
+		function onPrint(i){
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("show");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+		}		
+	</script>
+	
+</head>
+<body>
+	<h1>Homework Functions</h1>
+	<h3>ex.2 Write a function that reverses the digits of given decimal number. Example: 256 -> 652"</h3>
+	
+	<div id="js-console">
+		<label for="number">Enter number: </label>
+		<input type="text" id="number"/>
+		<input type="button" id="result" onclick="onReverseDigit()" value="Reverse Digit"/>
+		<br />	
+	</div>	
+	<div id="show"></div>
+</body>
+</html>

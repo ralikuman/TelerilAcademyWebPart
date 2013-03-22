@@ -1,0 +1,63 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Functions ex6</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		body{
+			background: #FFFFCC;
+			font-family: Arial;
+		}
+	</style>
+	<script type="text/javascript">
+		var sequence = new Array(4,6,7,3,9,2,2,1,6,3,1,8,3,3,3,2,3,3,2,4);
+		var sequence1 = new Array(4,3,6,9,11,13);
+		var position = -1;
+		
+		function onFindFirstIndex(){
+			onPrint("Sequence: " + sequence);	
+			onPrint("First index of bigger number is: " + onFindIndex(sequence));
+			
+			onPrint("Sequence1: " + sequence1);
+			onPrint("First index of bigger number is: " + onFindIndex(sequence1));	
+		}
+
+		function onFindIndex(sequence ){		
+			var isBigger = false;
+			for(var i=0; i<sequence.length-1; i++)
+			{
+				if((sequence[i+1]> sequence[i]) && (sequence[i+1]> sequence[i+2]) )
+				{
+					isBigger = true;
+					position = i+1;	
+					break;
+				}
+				else{
+					position = -1;
+				}
+			}	
+			return position;
+		}
+		
+		function onPrint(i){
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("show");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+		}	
+	</script>
+</head>
+<body>
+	<h1>Homework Functions</h1>
+	<h3>ex.7 Write a Function that returns the index of the first element in array that is bigger than its neighbors, or -1, if there’s no such element.
+	Use the function from the previous exercise.
+</h3>
+	<div id="js-console">
+		<input type="button" id="result" onclick="onFindFirstIndex()" value="Index of first element in array that is bigger than its neighbors "/>
+		<br/>	
+	</div>	
+	<div id="show">
+		<p></p>
+	</div>
+</body>
+</html>

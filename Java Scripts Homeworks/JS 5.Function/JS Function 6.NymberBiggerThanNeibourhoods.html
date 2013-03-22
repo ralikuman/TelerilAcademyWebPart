@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Functions ex6</title>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		body{
+			background: #FFFFCC;
+			font-family: Arial;
+		}
+	</style>
+	<script type="text/javascript">
+		var sequence = new Array(4,6,7,3,9,2,2,1,6,3,1,8,3,3,3,2,3,3,2,4);
+		var number;
+		var position;
+		
+		function onFindIsBiggerElement(){
+			onPrint("Sequence: " + sequence);
+			position = parseInt( document.getElementById('position').value);
+			
+			if (position>=0 && position<sequence.length)
+			{
+				onFindOccuranceOfNumber(sequence,position);		
+			}
+			else {
+				onPrint("Enter possition is bigger that length of sequence");
+			}
+		}
+
+		function onFindOccuranceOfNumber(sequence,position ){
+			number = sequence[position];
+			var isBigger = false;
+			if((number >sequence[position-1])  && (number > sequence[position+1]))
+			{
+				isBigger = true;
+			}
+			onPrint("Number " + number + " on position " + position + " is bigger than its two neighbors: ");
+			onPrint(isBigger);
+		}
+		function onPrint(i){
+			var newNode = document.createElement("p");
+			newNode.appendChild(document.createTextNode(i));
+			var refNode = document.getElementById("show");
+			refNode.parentNode.insertBefore(newNode, refNode); 
+		}	
+	</script>
+</head>
+<body>
+	<h1>Homework Functions</h1>
+	<h3>ex.6 Write a function that checks if the element at given position in given array of integers is bigger than its two neighbors (when such exist).</h3>
+	<div id="js-console">
+		<input type="text" id="position"/>
+		<input type="button" id="result" onclick="onFindIsBiggerElement()" value="Element is bigger than two neighbors"/>
+		<br/>	
+	</div>	
+	<div id="show"></div>
+</body>
+</html>
